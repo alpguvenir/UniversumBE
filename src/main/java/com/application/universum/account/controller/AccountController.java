@@ -19,15 +19,17 @@ public class AccountController {
     public String index() {
         return "Universum is Up!";
     }
-
     @PostMapping("/rest/account")
     public Account saveAccount(@RequestBody Account account) {
         return accountService.saveAccount(account);
     }
-
     @GetMapping("/rest/accounts")
     public List<Account> getAccounts() {
         return accountService.fetchAccountList();
     }
+
+    /*
+    PATCH PUT
+     */
 
 }
