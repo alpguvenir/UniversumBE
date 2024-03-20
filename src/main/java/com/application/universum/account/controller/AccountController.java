@@ -16,11 +16,6 @@ public class AccountController {
 
     @Autowired private AccountService accountService;
 
-    @GetMapping("/") // Health Check
-    public String healthCheck() {
-        return "Universum Backend is Up!";
-    }
-
     //  When we use the @Valid annotation, if the entity has a NotNull/NotBlank field left empty, it will return 400, the application will not throw an exception
     //  If the @Valid annotation is not added, it will return 500 server error with the following message:
     //      jakarta.validation.ConstraintViolationException: Validation failed for classes [com.application.universum.account.entity.Account] during persist time for groups [jakarta.validation.groups.Default, ]

@@ -16,6 +16,7 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String Name;
+    // Refer to: https://www.baeldung.com/hibernate-notnull-vs-nullable
     //@Column(nullable = false)
     @NotBlank(message = "Email cannot be left empty")
     private String EmailAddress;
