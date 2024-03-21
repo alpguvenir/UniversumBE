@@ -14,7 +14,8 @@ import java.util.List;
 @RestController
 public class AccountController {
 
-    @Autowired private AccountService accountService;
+    @Autowired
+    private AccountService accountService;
 
     //  When we use the @Valid annotation, if the entity has a NotNull/NotBlank field left empty, it will return 400, the application will not throw an exception
     //  If the @Valid annotation is not added, it will return 500 server error with the following message:
@@ -23,7 +24,7 @@ public class AccountController {
     //          ConstraintViolationImpl{interpolatedMessage='Email cannot be left empty', propertyPath=EmailAddress, rootBeanClass=class com.application.universum.account.entity.Account, messageTemplate='Email cannot be left empty'}
     //      ]
     @PostMapping("/rest/account")
-    public Account saveAccount(@RequestBody Account account) {
+    public Account saveAccount(@RequestBody @Valid Account account) {
         return accountService.saveAccount(account);
     }
 
