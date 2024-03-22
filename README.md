@@ -14,4 +14,4 @@ To create a war file, use the following command:
 ./mvnw clean package
 ```
 
-$${\color{red}Red}$$
+$${\color{red}Red xyz}$$
