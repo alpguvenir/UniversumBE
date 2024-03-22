@@ -4,8 +4,8 @@ To run the application, use the following command:
 ./mvnw spring-boot:run
 ```
 
-The application will be served on <a href="http://localhost:8080" target="_blank">localhost:8080</a>
-To access the H2 database console, simply navigate to http://localhost:8080/h2-console/
+The application will be served on [localhost:8080](http://localhost:8080/)
+To access the H2 database console, simply navigate to [localhost:8080/h2-console](http://localhost:8080/h2-console/)
 
 <br/>
 
