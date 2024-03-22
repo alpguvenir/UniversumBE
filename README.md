@@ -21,6 +21,12 @@ Based on the value between the packaging tags in the pom.xml we are able to crea
 ./mvnw clean package
 ```
 
+To tun a jar/war file, use the following command:
+```diff
+java -jar "name-of-jar-file".jar
+java -jar "name-of-war-file".war 
+```
+
 $${\color{red}Red xyz}$$
 
 
