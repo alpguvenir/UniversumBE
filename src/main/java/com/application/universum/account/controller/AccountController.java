@@ -4,6 +4,7 @@ import com.application.universum.account.entity.Account;
 import com.application.universum.account.service.AccountService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,8 +25,10 @@ public class AccountController {
     //          ConstraintViolationImpl{interpolatedMessage='Email cannot be left empty', propertyPath=EmailAddress, rootBeanClass=class com.application.universum.account.entity.Account, messageTemplate='Email cannot be left empty'}
     //      ]
     @PostMapping("/rest/account")
-    public Account saveAccount(@RequestBody @Valid Account account) {
-        return accountService.saveAccount(account);
+    public ResponseEntity<Account> saveAccount(@RequestBody @Valid Account account) {
+        Account newAccount = accountService.saveAccount(account);
+        return ResponseEntity.ok(newAccount);
+        //return accountService.saveAccount(account);
     }
 
     @GetMapping("/rest/accounts")
