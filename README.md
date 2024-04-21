@@ -27,6 +27,11 @@ java -jar "name-of-jar-file".jar
 java -jar "name-of-war-file".war 
 ```
 
+
+sam build
+sam deploy --guided
+
+
 $${\color{red}Red xyz}$$
 
 
