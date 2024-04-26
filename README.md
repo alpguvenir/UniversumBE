@@ -27,10 +27,24 @@ java -jar "name-of-jar-file".jar
 java -jar "name-of-war-file".war 
 ```
 
+Resources for AWS Lambda (Creates Lambda, API Gateway):
+- https://www.youtube.com/watch?v=HQQD4dndDpE&ab_channel=JamesEastham
+- https://github.com/aws/serverless-java-container/wiki/Quick-start---Spring-Boot3
 
-sam build
-sam deploy --guided
+Creating the "StreamLambdaHandler" class
+Creating template.yaml file
 
+To deploy the application to AWS Lambda server follow below:
+- sam build
+- sam deploy --guided
+
+Resources for AWS DynamoDB:
+- https://www.youtube.com/watch?v=Q9hLQfBBbhU&t=2s&ab_channel=SimpleProgramming
+
+Creating the access key and secret
+Creating the DynamoDBConfig class
+Modifying entity classes
+Service and repository layer for dynamo
 
 $${\color{red}Red xyz}$$
 
