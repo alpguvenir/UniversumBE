@@ -14,23 +14,20 @@
 	<packaging>jar</packaging>
 	<!-- If war is needed change packaging to war -->
 
-	<!--
-	Packing using maven
-	https://stackoverflow.com/questions/71898746/spring-boot-create-jar-file-maven
-	-->
+	<!-- Packing using maven
+	https://stackoverflow.com/questions/71898746/spring-boot-create-jar-file-maven -->
 
 	<name>Universum</name>
 	<description>Universum Spring Boot project</description>
 	<properties>
-		<!--
-		https://stackoverflow.com/questions/76467522/cant-compile-spring-boot-on-java-1-8
-		Spring 3.x doesn't allow 1.8
-		-->
+		<!-- https://stackoverflow.com/questions/76467522/cant-compile-spring-boot-on-java-1-8
+		Spring 3.x doesn't allow 1.8 -->
 		<java.version>17</java.version>
 		<spring-cloud.version>2022.0.4</spring-cloud.version>
 	</properties>
 	<dependencies>
-		<!-- Dependencies for AWS -->
+
+		<!-- Dependencies for AWS Lambda-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-function-web</artifactId>
@@ -39,13 +36,25 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-function-adapter-aws</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>com.amazonaws.serverless</groupId>
 			<artifactId>aws-serverless-java-container-springboot3</artifactId>
 			<version>2.0.1</version>
 		</dependency>
 		<!-- Dependencies for AWS -->
+
+		<!-- Dependencies for DynamoDB -->
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-dynamodb</artifactId>
+			<version>1.11.408</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.derjust</groupId>
+			<artifactId>spring-data-dynamodb</artifactId>
+			<version>5.1.0</version>
+		</dependency>
+		<!-- Dependencies for DynamoDB -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -65,11 +74,6 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.amazonaws</groupId>
-			<artifactId>DynamoDBLocal</artifactId>
-			<version>2.3.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -112,33 +116,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	<!--
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-shade-plugin</artifactId>
-				<version>3.5.1</version>
-				<configuration>
-					<createDependencyReducedPom>false</createDependencyReducedPom>
-				</configuration>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>shade</goal>
-						</goals>
-						<configuration>
-							<artifactSet>
-								<excludes>
-									<exclude>org.apache.tomcat.embed:*</exclude>
-								</excludes>
-							</artifactSet>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
-	-->
 </project>

@@ -23,6 +23,10 @@ Resources:
             Path: /{proxy+}
             Method: any
 
+# https://github.com/aws/serverless-java-container/wiki/Quick-start---Spring-Boot3
+# https://www.youtube.com/watch?v=A1rYiHTy9Lg&list=PLCOG9xkUD90IDm9tcY-5nMK6X6g8SD-Sz&ab_channel=JamesEastham
+
+
 #Outputs:
 #  MyServiceApi:
 #    Description: URL for application
