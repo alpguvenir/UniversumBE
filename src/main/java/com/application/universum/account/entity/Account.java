@@ -24,7 +24,7 @@ public class Account implements Serializable {
 
     @DynamoDBRangeKey
     private String Name;
-    // Refer to: https://www.baeldung.com/hibernate-notnull-vs-nullable
+    // Refer to the documentation: https://www.baeldung.com/hibernate-notnull-vs-nullable
     //@Column(nullable = false)
 
     @DynamoDBRangeKey
