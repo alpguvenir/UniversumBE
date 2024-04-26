@@ -1,0 +1,35 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: AWS Serverless Spring Boot 3 API - universum.be::universum-be
+
+Globals:
+  Api:
+    EndpointConfiguration: REGIONAL
+
+Resources:
+  LambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: com.application.universum.StreamLambdaHandler::handleRequest
+      Runtime: java17
+      CodeUri: .
+      MemorySize: 512
+      Policies: AWSLambdaBasicExecutionRole
+      Timeout: 30
+      Events:
+        ProxyResource:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: any
+
+# https://github.com/aws/serverless-java-container/wiki/Quick-start---Spring-Boot3
+# https://www.youtube.com/watch?v=A1rYiHTy9Lg&list=PLCOG9xkUD90IDm9tcY-5nMK6X6g8SD-Sz&ab_channel=JamesEastham
+
+
+#Outputs:
+#  MyServiceApi:
+#    Description: URL for application
+#    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/ping'
+#    Export:
+#      Name: MyServiceApi

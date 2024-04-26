@@ -1,9 +1,11 @@
 package com.application.universum.account.controller;
 
 import com.application.universum.account.entity.Account;
+import com.application.universum.account.service.AccountDynamoServiceImpl;
 import com.application.universum.account.service.AccountService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +26,7 @@ public class AccountController {
     //      List of constraint violations:[
     //          ConstraintViolationImpl{interpolatedMessage='Email cannot be left empty', propertyPath=EmailAddress, rootBeanClass=class com.application.universum.account.entity.Account, messageTemplate='Email cannot be left empty'}
     //      ]
+
     @PostMapping("/rest/account")
     public ResponseEntity<Account> saveAccount(@RequestBody @Valid Account account) {
         Account newAccount = accountService.saveAccount(account);
@@ -32,8 +35,8 @@ public class AccountController {
     }
 
     @GetMapping("/rest/accounts")
-    public List<Account> getAccounts() {
-        return accountService.fetchAccountList();
+    public ResponseEntity<List<Account>> getAccounts() {
+        return ResponseEntity.ok(accountService.fetchAccountList());
     }
 
 }

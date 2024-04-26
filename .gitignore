@@ -31,3 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### AWS Code ###
+.aws-sam/
+AWSCLIV2.pkg
+create-table.json
+samconfig.toml
