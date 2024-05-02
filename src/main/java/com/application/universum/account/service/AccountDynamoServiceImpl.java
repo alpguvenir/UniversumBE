@@ -16,6 +16,7 @@ public class AccountDynamoServiceImpl implements AccountService {
 
     @Override
     public Account saveAccount(Account account) {
+        accountRepository.saveAccount(account);
         return null;
     }
 
@@ -25,12 +26,12 @@ public class AccountDynamoServiceImpl implements AccountService {
     }
 
     @Override
-    public Account updateAccount(Account account, Long userId) {
+    public Account updateAccount(Account account, String userId) {
         return null;
     }
 
     @Override
-    public void deleteAccountById(Long userId) {
+    public void deleteAccountById(String userId) {
 
     }
 

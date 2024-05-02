@@ -27,7 +27,7 @@ public class DynamoDBConfig {
     private String amazonAWSSecretKey;
 
     @Value("${amazon.aws.region}")
-    private String amazonaAWSRegion;
+    private String amazonAWSRegion;
 
     @Value("${amazon.aws.dynamodb.endpoint}")
     private String amazonAWSDynamoDBEndpoint;
@@ -40,7 +40,7 @@ public class DynamoDBConfig {
     @Bean
     public AmazonDynamoDB amazonDynamoDBConfig() {
         return AmazonDynamoDBClientBuilder.standard()
-                .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(amazonAWSDynamoDBEndpoint, amazonaAWSRegion))
+                .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(amazonAWSDynamoDBEndpoint, amazonAWSRegion))
                 .withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(amazonAWSAccessKey, amazonAWSSecretKey)))
                 .build();
     }

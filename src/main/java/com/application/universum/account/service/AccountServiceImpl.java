@@ -22,7 +22,7 @@ public class AccountServiceImpl implements AccountService {
         return (List<Account>) accountRepository.findAll();
     }
 
-    @Override public Account updateAccount(Account account, Long userId) {
+    @Override public Account updateAccount(Account account, String userId) {
 
         Account accountFound = accountRepository.findById(userId).orElse(null);
 
@@ -38,7 +38,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public void deleteAccountById(Long userId) {
+    public void deleteAccountById(String userId) {
         accountRepository.deleteById(userId);
 
     }

@@ -15,9 +15,4 @@ public class HealthCheckController {
         return "Universum Backend is Up Local!";
     }
 
-    @GetMapping("/rest3") // Health Check
-    public String healthCheck2() {
-        return "Universum Backend is Up Local!";
-    }
-
 }
