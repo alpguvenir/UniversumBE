@@ -10,16 +10,16 @@ To run the application, use the following command:
 ./mvnw spring-boot:run
 ```
 
-To run using local H2 Database use either option:
-- state the profile as <i>spring.profiles.active=local</i> in the application.properties 
+To run using local H2 Database use <b>either</b> option:
+- set the profile as <i>spring.profiles.active=local</i> in the application.properties 
 - run <i>mvn spring-boot:run -Dspring-boot.run.profiles=local</i>
 
 
 - The application will be served on [localhost:8080](http://localhost:8080/)
 - To access the H2 database console, simply navigate to [localhost:8080/h2-console](http://localhost:8080/h2-console/)
 
-To run using AWS DynamoDB use either option:
-- state the profile as <i>spring.profiles.active=dynamodb</i> in the application.properties
+To run using AWS DynamoDB use <b>either</b> option:
+- set the profile as <i>spring.profiles.active=dynamodb</i> in the application.properties
 - run <i>mvn spring-boot:run -Dspring-boot.run.profiles=dynamodb</i>
 
 <br/>
@@ -27,7 +27,7 @@ To run using AWS DynamoDB use either option:
 Running from a jar/war file:
 
 To create a jar/war file, use the following command:
-Based on the value between the packaging tags in the pom.xml we are able to create either of the 
+Based on the value between the packaging tags in the pom.xml we are able to create either of the packaging type:
 ```diff
 ./mvnw clean package
 ```
@@ -43,11 +43,12 @@ java -jar "name-of-war-file".war
 Resources for AWS Lambda (Creates Lambda, API Gateway):
 - https://www.youtube.com/watch?v=HQQD4dndDpE&ab_channel=JamesEastham
 - https://github.com/aws/serverless-java-container/wiki/Quick-start---Spring-Boot3
+- https://www.youtube.com/watch?v=A1rYiHTy9Lg&ab_channel=JamesEastham
 
 
 - Creating the "StreamLambdaHandler" class 
 - Creating template.yaml file
-
+- *For creating template.yaml it is also possible to use the sample project created by the maven command specified in the Quick start tutorial
 
 Resources for AWS DynamoDB:
 - https://www.youtube.com/watch?v=Q9hLQfBBbhU&t=2s&ab_channel=SimpleProgramming
@@ -61,11 +62,11 @@ Resources for AWS DynamoDB:
 <h2>Deploying the application</h2>
 
 Create an access key from > Account Settings > Security Credentials
-- add key id and access key to: /Users/{User}/.aws/credentials
+- add key id and access key to the file located in your local: /Users/{User}/.aws/credentials
 
 
 To deploy the application to AWS Lambda server install aws sam (https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html) and follow below:
-- sam build
+- sam build (profile needs to be specified in application.properties)
 - sam deploy --guided
 
 $${\color{red}Red xyz}$$
