@@ -18,14 +18,14 @@ public class AccountDynamoRepository {
     @Autowired
     private DynamoDBMapper mapper;
 
-    public void saveAccount(Account account) {
+    public Account saveAccount(Account account) {
         mapper.save(account);
+        return account;
     }
 
     public List<Account> getAccountsList() {
         DynamoDBScanExpression scanExpression = new DynamoDBScanExpression();
         PaginatedScanList<Account> scanResult = mapper.scan(Account.class, scanExpression);
-
         return scanResult;
     }
 

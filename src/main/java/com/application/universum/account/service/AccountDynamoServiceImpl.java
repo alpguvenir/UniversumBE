@@ -16,8 +16,7 @@ public class AccountDynamoServiceImpl implements AccountService {
 
     @Override
     public Account saveAccount(Account account) {
-        accountRepository.saveAccount(account);
-        return null;
+        return accountRepository.saveAccount(account);
     }
 
     @Override
