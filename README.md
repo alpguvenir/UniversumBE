@@ -69,6 +69,9 @@ To deploy the application to AWS Lambda server install aws sam (https://docs.aws
 - sam build (profile needs to be specified in application.properties)
 - sam deploy --guided
 
+<h2>Security</h2>
+https://www.linkedin.com/pulse/spring-boot-using-jwt-without-tung-vo/
+
 $${\color{red}Red xyz}$$
 
 
